@@ -1,0 +1,10 @@
+[user]
+	email = michal.halenka@gmail.com
+	name = Michal Halenka
+	signingkey = 107F72B4
+[core]
+	# indent-with-non-tab - detekuje 8 a více mezer na začátku řádku
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+	autocrlf = input
+[color]
+	ui = true

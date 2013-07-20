@@ -1,0 +1,1 @@
+eval `keychain --confirm --quiet --agents gpg,ssh --eval`

@@ -1,0 +1,18 @@
+URxvt*depth:32
+URxvt*foreground:#B0B0B0
+URxvt*background:rgba:2000/2000/2000/aaaa
+# font a velikost, po změně stačí xrdb-load ~/.Xdefaults
+URxvt*font:		-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt*saveLines:         65535
+URxvt.scrollstyle: plain
+URxvt*urgentOnBell: true
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:      /usr/bin/firefox
+URxvt.matcher.button:   1
+
+! Xft settings -------------------------------
+Xft.dpi:       96
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+Xft.rgba:      rgb

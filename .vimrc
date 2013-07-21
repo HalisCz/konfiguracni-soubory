@@ -1,9 +1,15 @@
+" pluginy
+set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim
+
 " generic
 set nocompatible	"není to vi ale vim
 
 " zvýrazňování
 syntax on
 set showmatch "zvýraznění páru závorek
+
+" barvy
+set t_Co=256
 
 " formáty
 set fileencodings=utf-8,iso8859-2,cp1250
@@ -37,4 +43,4 @@ set wildmenu		"v :příkazovém řádku zobrazí menu pro výběr
 set wildmode=list:longest,list:full	"chování TAB v~příkazovém řádku
 set wildignore=*~,*.o,*.log,*.aux	"Ignoruje při doplňování tabulátorem
 
-set nojoinspaces " při spojování řádků nedává dvě mezery
+set nojoinspaces	" při spojování řádků nedává dvě mezery

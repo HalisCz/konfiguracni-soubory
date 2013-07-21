@@ -167,3 +167,12 @@ function precmd() {
 if [ $USER = halis ]; then
 	eval `keychain --confirm --quiet --agents gpg --eval`
 fi
+
+# powerline
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [[ -r ~/.local/lib64/python3.2/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib64/python3.2/site-packages/powerline/bindings/zsh/powerline.zsh
+fi

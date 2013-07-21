@@ -1,3 +1,6 @@
 [submodule ".config/awesome"]
 	path = .config/awesome
 	url = git@github.com:HalisCz/awesome-conf.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = https://github.com/Lokaltog/powerline.git

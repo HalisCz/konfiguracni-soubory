@@ -1,8 +1,8 @@
 URxvt*depth:32
 URxvt*foreground:#B0B0B0
 URxvt*background:rgba:2000/2000/2000/aaaa
-# font a velikost, po změně stačí xrdb-load ~/.Xdefaults
-URxvt*font:		-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+! font a velikost, po změně stačí xrdb-load ~/.Xdefaults
+URxvt*font:		xft:Terminus\ for\ Powerline:pixelsize=12:antialias=true:hinting=true
 urxvt*saveLines:         65535
 URxvt.scrollstyle: plain
 URxvt*urgentOnBell: true

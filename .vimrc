@@ -1,4 +1,7 @@
 " pluginy
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
 " powerline
 set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim "powerline
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)

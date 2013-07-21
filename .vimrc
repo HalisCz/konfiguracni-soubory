@@ -1,5 +1,7 @@
 " pluginy
-set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim
+" powerline
+set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim "powerline
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " generic
 set nocompatible	"není to vi ale vim
@@ -44,3 +46,4 @@ set wildmode=list:longest,list:full	"chování TAB v~příkazovém řádku
 set wildignore=*~,*.o,*.log,*.aux	"Ignoruje při doplňování tabulátorem
 
 set nojoinspaces	" při spojování řádků nedává dvě mezery
+cmap w!! w !sudo tee > /dev/null %

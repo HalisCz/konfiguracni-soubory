@@ -1,52 +1,149 @@
-" pluginy
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
-" powerline
-set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim "powerline
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+"pluginy
+	"pathogen
+		call pathogen#infect()
+		call pathogen#helptags()
+	"powerline
+		set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim "powerline
+		set noshowmode				"Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-" generic
-set nocompatible	"není to vi ale vim
+"generic
+	set nocompatible				"není to vi ale vim
+	set visualbell					"vizuální zvonek
+	set title
+	set titlestring=VIM\ %f%y%m%r	"titulek
+	set mouse=a							"myš v konzole
+	set confirm							"pokud jsem nepoužil ! a měl jsem, tak se mě zeptá co dělat
+	set nojoinspaces				"při spojování řádků nedává dvě mezery
+	set clipboard=unnamed		"Vše, co se ukládá do "unnamed" registru, se bude ukládat zároveň i do clipboardu.
 
-" zvýrazňování
-syntax on
-set showmatch "zvýraznění páru závorek
+"ovládání
+	set backspace=indent,eol,start "Backspace maže odsazení, konce řádků,...
+	let mapleader = ",,"
+	let maplocalleader = ",,"
 
-" barvy
-set t_Co=256
+"zvýrazňování
+	syntax on
+	set showmatch						"zvýraznění páru závorek
 
-" formáty
-set fileencodings=utf-8,iso8859-2,cp1250
-set fileformats=unix,dos
+"formáty
+	set fileencodings=utf-8,iso8859-2,cp1250
+	set fileformats=unix,dos
 
-" statusline
-set showcmd		"ukazuje příkazy na posledním řádku
-set showmode		"ukazuj režim INZERT, REPLACE ....
-set laststatus=2	"znamená, že chceme, aby byl stavový řádek zapnutý vždy
+"statusline
+	set showcmd							"ukazuje příkazy na posledním řádku
+	set laststatus=2				"znamená, že chceme, aby byl stavový řádek zapnutý vždy
 
-" pozice
-set number		"ukazuje čísla řádků
-set ruler		"ukazuj pozici kurzoru
+"pozice
+	set number							"ukazuje čísla řádků
+	set ruler								"ukazuj pozici kurzoru
 
-" zobrazení
-set scrolloff=3		"minimální počet viditelných řádků při rolování
-set sidescroll=3	"totéž při posun za stránky
+"zobrazení
+	set scrolloff=3					"minimální počet viditelných řádků při rolování
+	set sidescroll=3				"totéž při posun za strany
+	set wrap								"zobrazuje řádky zalomeně
+	set linebreak						"zlom jen ve slově 
+	set autoindent					"jen zachovává odsazení
+	set smartindent					"zachovává odsazení ale inteligentně ho umí zvětšit/zmenšit
+	filetype plugin indent on	"odsazovaní podle filetype
 
-" vyhledávání
-set wrapscan 		"po dosažení konce souboru se hledá znovu od začátku
-set hlsearch		"zvýraznění hledaného textu
-set ignorecase		"při hledání nerozlišuje velká a malá písmena
-set smartcase		"ignorecase platí pouze tehdy pokud v~hledaném výrazu jsou jen malá písmena
-set incsearch		"ukazuje mi co hledám ještě předtím než dám Enter
+"vyhledávání
+	set wrapscan						"po dosažení konce souboru se hledá znovu od začátku
+	set hlsearch						"zvýraznění hledaného textu
+	set ignorecase					"při hledání nerozlišuje velká a malá písmena
+	set smartcase						"ignorecase platí pouze tehdy pokud v~hledaném výrazu jsou jen malá písmena
+	set incsearch						"ukazuje mi co hledám ještě předtím než dám Enter
 
-" slovník
-set helplang=cs
+"slovníky
+	set helplang=cs					"jazyk nápovědy
+	map <Leader>s :set spell spelllang=cs,en<Return>
+	map <Leader>S :set nospell<Return>
 
-" doplňování
-set wildmenu		"v :příkazovém řádku zobrazí menu pro výběr
-set wildmode=list:longest,list:full	"chování TAB v~příkazovém řádku
-set wildignore=*~,*.o,*.log,*.aux	"Ignoruje při doplňování tabulátorem
+"doplňování
+	set wildchar=<Tab>
+	set wildmenu						"v :příkazovém řádku zobrazí menu pro výběr
+	set wildmode=list:longest,list:full	"chování TAB v~příkazovém řádku
+	set wildignore=*~,*.o,*.aux	"Ignoruje při doplňování tabulátorem
 
-set nojoinspaces	" při spojování řádků nedává dvě mezery
-cmap w!! w !sudo tee > /dev/null %
+"sudo trick
+	cmap w!! w !sudo tee > /dev/null %
+
+"odsazování
+	set tabstop=2						"odsazení tabulátoru
+	set shiftwidth=2				"šířka odsazení při >>
+	set noexpandtab					"Use tabs, not spaces
+	set shiftround					"Zaokrouhluj počet mezer při odsazování (>> C-T << C-D) na násobek shiftwidth.
+
+"historie a zálohování
+	set history=200
+	set backup
+	set backupdir=~/.vim/backup
+
+"folding
+	set foldcolumn=4
+	set foldmethod=indent
+	set foldmarker=##,::
+
+"filetype specific options
+	"source ~/.vim/skeletons.vim
+	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php source ~/.vim/html.vim
+	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php source ~/.vim/html.menu
+	"au BufNewFile *.php,*.html,*.xhtml 0r ~/.vim/sablony/xhtml.html
+	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php set filetype=xhtml
+	"au BufNewFile *.fold 0r ~/.vim/sablony/osnova.fold
+	"au BufNewFile *.fold set filetype=conf
+	"au BufNewFile *.tex 0r ~/.vim/sablony/latex.tex
+	"au BufRead,BufNewFile *.tex set filetype=tex
+	"au BufNewFile *.pl 0r ~/.vim/sablony/perl.pl
+	"au BufNewFile *.c 0r ~/.vim/sablony/program.c
+
+	"au BufNewFile,BufRead *.t2t set ft=txt2tags
+	"au BufNewFile *.t2t 0r ~/.vim/sablony/txt2tags.t2t
+	"au BufNewFile,BufRead *.asm set ft=asm8051
+	"au BufNewFile,BufRead *.inc set ft=asm8051
+
+	"au BufRead *.PAS set ft=pascal
+	"au BufRead *.lpr set ft=pascal
+
+
+"Vzhled
+	colorscheme darkblue
+	set t_Co=256
+
+"páry
+	imap <> <><Esc>i
+	imap () ()<Esc>i
+	imap [] []<Esc>i
+	imap {} {}<Esc>i
+	imap $$ $$<Esc>i
+	imap "" ""<Esc>i
+	imap '' ''<Esc>i
+	imap ** **<Esc>i
+
+"spustí shell z označeným příkazem
+	"příkaz shell pod kurzorem
+		map <Leader>e :!<C-R><C-A>& <Return>
+	"označený příkaz
+		vmap <Leader>e y:!<C-R>"& <Return>
+	"celý řádek zadá jako příkaz shell
+		map <Leader>E ^v$h<Leader>e
+		imap <Leader>E <Esc><Leader>E
+"řetězec pod kurzorem vloží jak URL do prohlížeče
+	map <Leader>w :!firefox <C-R><C-A> & <Return>
+
+"Formátování
+	"formátovat odstavec
+		map <Leader><Return> gwap
+		imap <Leader><Return> <Esc>gwapa
+	map <Leader>g<Return> gogqG
+
+set ww=b,s,<,>,[,],~ ",h,l "chování na přechodu dvou řádků
+
+"""""""""""""""""""""" Enhanced commentify plugin
+" let g:EnhCommentifyTraditionalMode = 'no'
+" let g:EnhCommentifyUserMode = 'yes'
+" let g:EnhCommentifyAlignRight = 'yes'
+" let g:EnhCommentifyMultiPartBlocks = 'yes'
+" let g:EnhCommentifyUseSyntax = 'yes'
+
+""""""""""""""""""""""""""""""""
+"vim:nospell:

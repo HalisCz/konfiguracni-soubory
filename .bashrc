@@ -15,7 +15,7 @@
 	export PROMPT_COMMAND='history -a;history -r'	# okamžitě zapisuje a znovunačítá historii
 
 	shopt -s autocd	# autocd
-	shopt -s hostcompletie # doplňuje hostnames
+	shopt -s hostcomplete # doplňuje hostnames
 	# do not overwrite files when redirecting output
 	set -o noclobber
 

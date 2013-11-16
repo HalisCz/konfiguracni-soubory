@@ -2,13 +2,19 @@ URxvt*depth:32
 URxvt*foreground:#B0B0B0
 URxvt*background:rgba:2000/2000/2000/aaaa
 ! font a velikost, po změně stačí xrdb-load ~/.Xdefaults
-URxvt*font:		xft:Terminus:pixelsize=12:antialias=true:hinting=true
+URxvt*font:		xft:Terminus:pixelsize=8:antialias=true:hinting=true
 urxvt*saveLines:         65535
 URxvt.scrollstyle: plain
 URxvt*urgentOnBell: true
-URxvt.perl-ext-common:  default,matcher
+
+! url matching, fontsize
+URxvt.perl-ext-common:  default,matcher,font-size
 URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:   1
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.font-size.step: 4
+
 
 ! Xft settings -------------------------------
 Xft.dpi:       96

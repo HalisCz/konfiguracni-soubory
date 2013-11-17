@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
-[submodule ",urxvt/ext"]
-	path = ,urxvt/ext
-	url = https://github.com/majutsushi/urxvt-font-size.git
 [submodule ".urxvt/ext"]
 	path = .urxvt/ext
 	url = https://github.com/majutsushi/urxvt-font-size.git

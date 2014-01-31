@@ -21,6 +21,7 @@ alias l='ls -CF'	# sloupce
 # ostatní
 alias tree="tree --dirsfirst"
 alias locate="locate -i"    # nerozlišuje velikost písmen
+alias redshifting="gtk-redshift -l 50:15"
 
 # rozbalovací alias
 un() { 

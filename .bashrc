@@ -7,7 +7,7 @@
 	fi
 
 # historie
-	export HISTSIZE=100000
+	export HISTSIZE=1000000
 	export HISTTIMEFORMAT='%F %T '
 	#export HISTIGNORE=""
 	export HISTCONTROL="ignorespace:ignoredups:erasedups"

@@ -1,10 +1,26 @@
 "pluginy
-	"pathogen
-		call pathogen#infect()
-		call pathogen#helptags()
-	"powerline
-		set rtp+=$HOME/.local/lib64/python3.2/site-packages/powerline/bindings/vim "powerline
-		set noshowmode				"Hide the default mode text (e.g. -- INSERT -- below the statusline)
+	"vundle
+		set rtp+=~/.vim/bundle/vundle/
+		call vundle#rc()
+		filetype off
+		"managed bundles
+			Bundle 'gmarik/vundle'
+			Bundle 'lokaltog/powerline'
+			Bundle 'tpope/vim-fugitive'
+			Bundle 'klen/python-mode'
+			Bundle 'tobyS/skeletons.vim'
+			Bundle 'SirVer/ultisnips'
+			Bundle 'altercation/vim-colors-solarized'
+		"Python mode
+			let g:pymode_options = 0 "nehrabej mi do nastavení, ale aktivuj v nich tyto
+			setlocal commentstring=#%s
+			setlocal define=^\s*\\(def\\\\|class\\)
+
+	" Powerline setup
+		set rtp+=/usr/lib64/python3.3/site-packages/powerline/bindings/vim
+		set guifont=Terminess\ Powerline/PCF\ 9
+		set laststatus=2
+		set t_Co=256
 
 "generic
 	set nocompatible				"není to vi ale vim
@@ -15,6 +31,8 @@
 	set confirm							"pokud jsem nepoužil ! a měl jsem, tak se mě zeptá co dělat
 	set nojoinspaces				"při spojování řádků nedává dvě mezery
 	set clipboard=unnamed		"Vše, co se ukládá do "unnamed" registru, se bude ukládat zároveň i do clipboardu.
+	set autochdir				"automaticky přejdi do adresáře s otevíraným souborem
+	autocmd! bufwritepost .vimrc source %		"při uložení automaticky načte .vimrc
 
 "ovládání
 	set backspace=indent,eol,start "Backspace maže odsazení, konce řádků,...
@@ -68,10 +86,12 @@
 	cmap w!! w !sudo tee > /dev/null %
 
 "odsazování
-	set tabstop=2						"odsazení tabulátoru
-	set shiftwidth=2				"šířka odsazení při >>
+	set tabstop=4						"odsazení tabulátoru
+	set shiftwidth=4				"šířka odsazení při >>
 	set noexpandtab					"Use tabs, not spaces
 	set shiftround					"Zaokrouhluj počet mezer při odsazování (>> C-T << C-D) na násobek shiftwidth.
+	vnoremap < <gv	"během odsazování zachová výběr
+	vnoremap > >gv
 
 "historie a zálohování
 	set history=200
@@ -106,8 +126,10 @@
 
 
 "Vzhled
-	colorscheme darkblue
-	set t_Co=256
+	"colorscheme darkblue
+"	let g:solarized_termcolors=256
+	set background=dark
+	colorscheme solarized
 
 "páry
 	imap <> <><Esc>i

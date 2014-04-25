@@ -12,7 +12,7 @@
 	#export HISTIGNORE=""
 	export HISTCONTROL="ignorespace:ignoredups:erasedups"
 	export HISTFILESIZE=20000
-	export PROMPT_COMMAND='history -a;history -r'	# okamžitě zapisuje a znovunačítá historii
+	export PROMPT_COMMAND="$PROMPT_COMMAND ; history -a;history -r"	# okamžitě zapisuje a znovunačítá historii
 
 	shopt -s autocd	# autocd
 	shopt -s hostcomplete # doplňuje hostnames

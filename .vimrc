@@ -19,7 +19,7 @@
 
 	" Powerline setup
 		set rtp+=/usr/lib64/python3.3/site-packages/powerline/bindings/vim
-		set guifont=Terminess\ Powerline/PCF\ 9
+		set guifont=Terminess\ Powerline\ 9
 		set laststatus=2
 		set t_Co=256
 

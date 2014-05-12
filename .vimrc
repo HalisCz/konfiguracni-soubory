@@ -10,6 +10,7 @@
 			Bundle 'klen/python-mode'
 			Bundle 'tobyS/skeletons.vim'
 			Bundle 'SirVer/ultisnips'
+			Bundle 'honza/vim-snippets'
 			Bundle 'altercation/vim-colors-solarized'
 			Bundle 'godlygeek/tabular'
 			Bundle 'scrooloose/nerdcommenter'

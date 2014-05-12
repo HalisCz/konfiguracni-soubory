@@ -12,6 +12,7 @@
 			Bundle 'SirVer/ultisnips'
 			Bundle 'altercation/vim-colors-solarized'
 			Bundle 'godlygeek/tabular'
+			Bundle 'scrooloose/nerdcommenter'
 		"Python mode
 			let g:pymode_options = 0 "nehrabej mi do nastavení, ale aktivuj v nich tyto
 			setlocal commentstring=#%s

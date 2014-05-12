@@ -1,19 +1,21 @@
 "pluginy
 	"vundle
-		set rtp+=~/.vim/bundle/vundle/
-		call vundle#rc()
+		set rtp+=~/.vim/bundle/Vundle.vim
+		call vundle#begin()
 		filetype off
-		"managed bundles
-			Bundle 'gmarik/vundle'
-			Bundle 'lokaltog/powerline'
-			Bundle 'tpope/vim-fugitive'
-			Bundle 'klen/python-mode'
-			Bundle 'tobyS/skeletons.vim'
-			Bundle 'SirVer/ultisnips'
-			Bundle 'honza/vim-snippets'
-			Bundle 'altercation/vim-colors-solarized'
-			Bundle 'godlygeek/tabular'
-			Bundle 'scrooloose/nerdcommenter'
+		"managed plugins
+			Plugin 'gmarik/Vundle.vim'
+			Plugin 'lokaltog/powerline'
+			Plugin 'tpope/vim-fugitive'
+			Plugin 'klen/python-mode'
+			Plugin 'tobyS/skeletons.vim'
+			Plugin 'SirVer/ultisnips'
+			Plugin 'honza/vim-snippets'
+			Plugin 'altercation/vim-colors-solarized'
+			Plugin 'godlygeek/tabular'
+			Plugin 'scrooloose/nerdcommenter'
+		call vundle#end()
+		filetype plugin indent on
 		"Python mode
 			let g:pymode_options = 0 "nehrabej mi do nastavení, ale aktivuj v nich tyto
 			setlocal commentstring=#%s

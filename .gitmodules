@@ -28,3 +28,6 @@
 [submodule ".urxvt/ext"]
 	path = .urxvt/ext
 	url = https://github.com/majutsushi/urxvt-font-size.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git

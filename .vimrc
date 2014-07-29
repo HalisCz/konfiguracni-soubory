@@ -4,16 +4,16 @@
 		call vundle#begin()
 		filetype off
 		"managed plugins
-			Plugin 'gmarik/Vundle.vim'
-			Plugin 'lokaltog/powerline'
-			Plugin 'tpope/vim-fugitive'
-			Plugin 'klen/python-mode'
-			Plugin 'tobyS/skeletons.vim'
 			Plugin 'SirVer/ultisnips'
-			Plugin 'honza/vim-snippets'
 			Plugin 'altercation/vim-colors-solarized'
+			Plugin 'gmarik/Vundle.vim'
 			Plugin 'godlygeek/tabular'
+			Plugin 'honza/vim-snippets'
+			Plugin 'klen/python-mode'
+			Plugin 'lokaltog/powerline'
 			Plugin 'scrooloose/nerdcommenter'
+			Plugin 'tobyS/skeletons.vim'
+			Plugin 'tpope/vim-fugitive'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode

@@ -10,10 +10,13 @@
 			Plugin 'godlygeek/tabular'
 			Plugin 'honza/vim-snippets'
 			Plugin 'klen/python-mode'
-			Plugin 'lokaltog/powerline'
+			Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 			Plugin 'scrooloose/nerdcommenter'
 			Plugin 'tobyS/skeletons.vim'
 			Plugin 'tpope/vim-fugitive'
+			Plugin 'chase/vim-ansible-yaml'
+			Plugin 'nathanaelkane/vim-indent-guides'
+			Plugin 'fmoralesc/vim-pinpoint'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode
@@ -22,7 +25,6 @@
 			setlocal define=^\s*\\(def\\\\|class\\)
 
 	" Powerline setup
-		set rtp+=/usr/lib64/python3.3/site-packages/powerline/bindings/vim
 		set guifont=Terminess\ Powerline\ 9
 		set laststatus=2
 		set t_Co=256
@@ -48,8 +50,8 @@
 
 "ovládání
 	set backspace=indent,eol,start "Backspace maže odsazení, konce řádků,...
-	let mapleader = ",,"
-	let maplocalleader = ",,"
+	let mapleader = ","
+	let maplocalleader = ","
 
 "zvýrazňování
 	syntax on
@@ -142,16 +144,6 @@
 "	let g:solarized_termcolors=256
 	set background=dark
 	colorscheme solarized
-
-"páry
-	imap <> <><Esc>i
-	imap () ()<Esc>i
-	imap [] []<Esc>i
-	imap {} {}<Esc>i
-	imap $$ $$<Esc>i
-	imap "" ""<Esc>i
-	imap '' ''<Esc>i
-	imap ** **<Esc>i
 
 "spustí shell z označeným příkazem
 	"příkaz shell pod kurzorem

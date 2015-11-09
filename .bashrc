@@ -1,6 +1,3 @@
-# completion
-	source /etc/profile.d/bash-completion.sh
-
 # aliasy
 	if [ -f ~/.aliases ]; then
 		source ~/.aliases
@@ -27,8 +24,16 @@
 	# do not overwrite files when redirecting output
 	set -o noclobber
 
+# MC barvy
+	export MC_SKIN=$HOME/.config/mc/solarized.ini
+
 # fortune
-	if [ "$PS1" ]; then
+	if [ -z "$PS1" ]
+	then
+		# noninteractive
+		break
+	else
+		# interactive shell
 		echo -e "\e[33m"
 		/usr/bin/fortune -s
 		echo -e "\e[39m"

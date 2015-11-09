@@ -2,7 +2,7 @@ shared
 forever
 avahi
 http
-6
 nopw
-localhost
+viewonly
+repeat
 display :0

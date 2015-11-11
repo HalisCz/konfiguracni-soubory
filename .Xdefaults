@@ -1,29 +1,3 @@
-*cursorBlink: true
-*utf8: 1
-
-! font a velikost, po změně stačí xrdb-load ~/.Xdefaults
-URxvt*font:		xft:Terminess Powerline:pixelsize=8:antialias=true:hinting=true
-urxvt*saveLines:         65535
-URxvt*scrollstyle: plain
-URxvt*scrollBar_right: true
-URxvt*urgentOnBell: true
-
-! url matching, fontsize
-URxvt.perl-ext-common:  default,matcher,font-size,searchable-scrollback
-URxvt.url-launcher:      /usr/bin/firefox
-URxvt.matcher.button:   1
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-URxvt.font-size.step: 4
-
-
-! Xft settings -------------------------------
-Xft.dpi:       96
-Xft.antialias: 1
-Xft.hinting:   1
-Xft.hintstyle: hintfull
-Xft.rgba:      rgb
-
 ! solarized theme
 ! Solarized color scheme for the X Window System
 !
@@ -65,20 +39,6 @@ Xft.rgba:      rgb
 ! #define S_base2 #073642
 ! #define S_base3 #002b36
 
-
-! To only apply colors to your terminal, for example, prefix
-! the color assignment statement with its name. Example:
-!
-! URxvt*background: S_base03
-
-*background: S_base03
-*foreground: S_base0
-*fading: 40
-*fadeColor: S_base03
-*cursorColor: S_base1
-*pointerColorBackground: S_base01
-*pointerColorForeground: S_base1
-
 *color0: S_base02
 *color1: S_red
 *color2: S_green
@@ -96,6 +56,62 @@ Xft.rgba:      rgb
 *color14: S_base1
 *color15: S_base3
 
+! -----------------------------
+*cursorBlink: true
+*utf8: 1
+
+!*faceSize: 10
+!*jumpScroll: true
+!*multiScroll: true
+!*boldMode: false
+!*scrollBar: false
+!*cutNewline: false
+!*scrollTtyOutput: false
+!*scrollKey: true
+!*dynamicColors: false
+!*saveLines: 3000
+!*geometry: 90x26
+!*background: #222222
+!*foreground: #707678
+!*cursorColor: #707678
+
+! font a velikost, po změně stačí xrdb-load ~/.Xdefaults
+!URxvt*font:		xft:Terminess Powerline:pixelsize=8:antialias=true:hinting=true
+URxvt*font:		xft:DejaVu Sans Mono for Powerline:pixelsize=11:antialias=true:hinting=true
+!URxvt*font:		xft:Terminus:pixelsize=8:antialias=true:hinting=true
+URxvt.saveLines:         65535
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+URxvt.urgentOnBell: true
+
+! url matching, fontsize (x11-misc/urxvt-perls, x11-misc/urxvt-font-size)
+URxvt.perl-ext-common:  default,matcher,font-size,searchable-scrollback
+URxvt.url-launcher:      /usr/bin/firefox
+URxvt.matcher.button:   1
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.font-size.step: 4
+
+
+! Xft settings -------------------------------
+Xft.dpi:       96
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+Xft.rgba:      rgb
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background: S_base03
+
+*background: S_base03
+*foreground: S_base0
+*fading: 40
+*fadeColor: S_base03
+*cursorColor: S_base1
+*pointerColorBackground: S_base01
+*pointerColorForeground: S_base1
 
 URxvt*background: [60]S_base03
 URxvt*depth:32

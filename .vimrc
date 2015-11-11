@@ -25,7 +25,7 @@
 			setlocal define=^\s*\\(def\\\\|class\\)
 
 	" Powerline setup
-		set guifont=Terminess\ Powerline\ 9
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 		set laststatus=2
 		set t_Co=256
 	" UltiSnips

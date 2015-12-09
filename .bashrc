@@ -26,15 +26,3 @@ set -o noclobber
 
 # MC barvy
 export MC_SKIN=$HOME/.config/mc/solarized.ini
-
-# fortune
-if [ -z "$PS1" ]
-then
-	# noninteractive
-	break
-else
-	# interactive shell
-	echo -e "\e[33m"
-	/usr/bin/fortune -s
-	echo -e "\e[39m"
-fi

@@ -4,11 +4,19 @@ if [ -f ~/.aliases ]; then
 fi
 
 # git status
+case $TERM in
+    xterm*|rxvt*)
+        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+        ;;
+    *)
+        TITLEBAR=''
+        ;;
+esac
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh
-	PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W\[\e[01;32m\]$(__git_ps1 " (%s)")\[\e[m\] \$\[\033[00m\]\a '
+	PS1='\[\033]0;\u@\h: \w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \W\[\e[01;32m\]$(__git_ps1 " (%s)")\[\e[m\] \$\[\033[00m\]\a '
 else
-	PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\]\a '
+	PS1='\[\033]0;\u@\h: \w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\]\a '
 fi
 
 # historie
@@ -26,3 +34,11 @@ set -o noclobber
 
 # MC barvy
 export MC_SKIN=$HOME/.config/mc/solarized.ini
+
+# Pokud je shell interaktivni
+if [ -t 0 ]; then
+	echo -e "\e[33m"
+	/usr/bin/fortune -s
+	echo -e "\e[39m"
+fi
+

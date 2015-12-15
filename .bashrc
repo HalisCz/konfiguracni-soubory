@@ -14,9 +14,9 @@ case $TERM in
 esac
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh
-	PS1='\[\e]0;\u@\h: \w\007\]\[\e[01;32m\]\u@\h\[\e[01;34m\] \W \[\e[01;32m\]$(__git_ps1 " (%s)")\[\e[0m\]\$\[\e[0m\a\] '
+	PS1='\[\e]0;\u@\h: \w\007\]\[\e[01;32m\]\u@\h\[\e[01;34m\] \W\[\e[01;32m\]$(__git_ps1 " (%s)")\[\e[0m\] \$\[\e[0m\a\] '
 else
-	PS1='\[\e]0;\u@\h: \w\007\]\[\e[01;32m\]\u@\h\[\e[01;34m\] \W \[\e[0m\]\$\[\e[0m\a\]'
+	PS1='\[\e]0;\u@\h: \w\007\]\[\e[01;32m\]\u@\h\[\e[01;34m\] \W\[\e[0m\] \$\[\e[0m\a\] '
 fi
 
 # historie

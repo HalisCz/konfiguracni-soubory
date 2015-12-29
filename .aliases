@@ -23,6 +23,7 @@ alias ssh="TERM=xterm ssh"	# řeší neznalost remote-hostů rxvt-unicode
 alias tree="tree --dirsfirst"
 alias locate="locate -i"    # nerozlišuje velikost písmen
 alias redshifting="gtk-redshift -l 50:15"
+alias ansigenome="/home/halis/.local/bin/ansigenome"
 
 # rozbalovací alias
 un() { 

@@ -17,13 +17,23 @@
 			Plugin 'chase/vim-ansible-yaml'
 			Plugin 'nathanaelkane/vim-indent-guides'
 			Plugin 'fmoralesc/vim-pinpoint'
+			Plugin 'scrooloose/syntastic'
+			Plugin 'scrooloose/nerdtree'
+			Plugin 'ctrlpvim/ctrlp.vim'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode
 			let g:pymode_options = 0 "nehrabej mi do nastavení, ale aktivuj v nich tyto
 			setlocal commentstring=#%s
 			setlocal define=^\s*\\(def\\\\|class\\)
-
+		"Syntastic
+			set statusline+=%#warningmsg#
+			set statusline+=%{SyntasticStatuslineFlag()}
+			set statusline+=%*
+			let g:syntastic_always_populate_loc_list = 1
+			let g:syntastic_auto_loc_list = 1
+			let g:syntastic_check_on_open = 1
+			let g:syntastic_check_on_wq = 0
 	" Powerline setup
 		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 		set laststatus=2

@@ -5,7 +5,6 @@ feh --bg-max ~/wallpapers/city-wallpaper-1.jpg
 xset dpms 7200 7200 7200
 insync start &
 dropbox &
-owncloud &
 
 udiskie -2t &
 nm-applet &
@@ -15,4 +14,3 @@ firefox &
 psi &
 thunderbird &
 gtk-redshift -l 50:15 &
-/home/halis/toggldesktop/TogglDesktop.sh &

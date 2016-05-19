@@ -14,7 +14,7 @@
 			Plugin 'scrooloose/nerdcommenter'
 			Plugin 'tobyS/skeletons.vim'
 			Plugin 'tpope/vim-fugitive'
-			Plugin 'chase/vim-ansible-yaml'
+			Plugin 'pearofducks/ansible-vim'
 			Plugin 'nathanaelkane/vim-indent-guides'
 			Plugin 'fmoralesc/vim-pinpoint'
 			Plugin 'scrooloose/syntastic'

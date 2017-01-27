@@ -41,4 +41,3 @@ if [ -t 0 ]; then
 	/usr/bin/fortune -s
 	echo -e "\e[39m"
 fi
-

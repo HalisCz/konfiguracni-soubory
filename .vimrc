@@ -4,7 +4,6 @@
 		call vundle#begin()
 		filetype off
 		"managed plugins
-			Plugin 'SirVer/ultisnips'
 			Plugin 'altercation/vim-colors-solarized'
 			Plugin 'gmarik/Vundle.vim'
 			Plugin 'godlygeek/tabular'

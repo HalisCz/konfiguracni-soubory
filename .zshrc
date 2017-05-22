@@ -1,178 +1,97 @@
-# Shell functions
-setenv() { export $1=$2 }	 # kompatibilita s csh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set prompts
-###############################################################################
-##								   PROMPT									 ##
-###############################################################################
-autoload -U promptinit compinit && promptinit && compinit
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-if [ $USER = root ]; then
-		prompt adam2 cyan red red forground;
-	else
-		prompt adam2 blue cyan green forground;
-	fi
-###############################################################################
-##								 END PROMPT									 ##
-###############################################################################
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster-light"
+SOLARIZED_THEME="light"
 
-# bindkey -v				 # editor jako vi
-# bindkey -e				 # editor jako emacs
-typeset -g -A key
-bindkey '^?' backward-delete-char
-bindkey '^[[7~' beginning-of-line
-bindkey '^[[5~' up-line-or-history
-bindkey '^[[3~' delete-char
-bindkey '^[[8~' end-of-line
-bindkey '^[[6~' down-line-or-history
-bindkey '^[[A' up-line-or-search
-bindkey '^[[D' backward-char
-bindkey '^[[B' down-line-or-search
-bindkey '^[[C' forward-char 
-bindkey '^[[2~' overwrite-mode
-bindkey ' ' magic-space		 # mezerník rozbaluje odkazy na historii
-bindkey "\e[1~" beginning-of-line # Home
-bindkey "\e[4~" end-of-line # End
-bindkey "\e[5~" beginning-of-history # PageUp
-bindkey "\e[6~" end-of-history # PageDown
-bindkey "\e[2~" quoted-insert # Ins
-bindkey "\e[3~" delete-char # Del
-bindkey "\e[5C" forward-word
-bindkey "\eOc" emacs-forward-word
-bindkey "\e[5D" backward-word
-bindkey "\eOd" emacs-backward-word
-bindkey "\e\e[C" forward-word
-bindkey "\e\e[D" backward-word
-bindkey "\e[Z" reverse-menu-complete # Shift+Tab
-# for rxvt
-bindkey "\e[7~" beginning-of-line # Home
-bindkey "\e[8~" end-of-line # End
-# for non RH/Debian xterm, can't hurt for RH/Debian xterm
-bindkey "\eOH" beginning-of-line
-bindkey "\eOF" end-of-line
-# for freebsd console
-bindkey "\e[H" beginning-of-line
-bindkey "\e[F" end-of-line
-# for guake
-bindkey "\eOF" end-of-line
-bindkey "\eOH" beginning-of-line
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "\e[3~" delete-char # Del
-bindkey '^R' history-incremental-search-backward
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# OSOBNI ALIASY
-# pripoji osobni aliasy pokud existuji
-if [ -f ~/.aliases ]; then
-	source ~/.aliases
-fi
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# Set OPTIONS
-# nastavení historie
-HISTSIZE=10000						# poèet øádkù
-HISTFILE=~/.history					# soubor pro ukládání do historie
-SAVEHIST=$HISTSIZE					# poèet øádkù po logoutu
-setopt HISTIGNORESPACE			    # øádek zaèínající mezerou si nepamatuje
-setopt HISTIGNOREALLDUPS			# vyhazuje z historie staré duplikáty
-setopt APPENDHISTORY				# nepøepisuje historii
-setopt EXTENDED_HISTORY             # dal¹í údaje jako timestamp atd.
-setopt INC_APPEND_HISTORY           # pøidává do historie okam¾itì
-setopt HIST_FIND_NO_DUPS            # nezobrazuje duplikáty pøi vyhledávání
-setopt SHARE_HISTORY                # sdíli historii mezi terminály
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-setopt EXTENDED_GLOB				# roz¹íøené ¾olíkové znaky
-setopt NO_CLOBBER					# ochrana pøi pøesmìrovávání výstupù
-# setopt CORRECTALL					# opravy pøeklepù
-setopt NO_BEEP						# nepípat pøi chybách
-setopt AUTOCD						# /etc == cd /etc
-setopt completealiases
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# File completion
-setopt autonamedirs alwaystoend nomenucomplete
-setopt COMPLETE_ALIASES AUTO_NAME_DIRS AUTO_PARAM_SLASH AUTO_REMOVE_SLASH
-setopt automenu autolist
-setopt autoparamkeys listambiguous listbeep listpacked listtypes
-zmodload -i zsh/complist			# obarví vypisované doplòování
-autoload colors
-#eval $(dircolors -b ~/.dir_colors)
-eval $(dircolors -b)
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin # pøi sudo doplòuje jinak
-zstyle ':completion:*' completer _oldlist _complete _match _prefix _list _approximate
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z} m:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
-zstyle ':completion:*' match-original both
-zstyle ':completion:*' menu select=1 _complete _ignored _approximate
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*' group-name ''
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-if [ $USER = root ]; then
-    zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,%cpu,cmd'
-else
-    zstyle ':completion:*:*:kill:*:processes' command 'ps fx -o pid,user,%cpu,cmd'
-fi
-zstyle ':completion:*:processes-names' command 'ps axho command'
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-case "$TERM" in
-  # [skipping some esoteric terminal emulators...]
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-  screen|screen.rxvt)
-     # Set a coloured prompt
-     PS1=$'%{\e[00;32m%}%*%{\e[00;34m%}%2~ %# %{\e[00m%}'
-     ;;
-  rxvt|rxvt-unicode|xterm|xterm-color)
-     # Set the title, and a coloured prompt containing some useful info
-     PS1=$'%{\e]0;%-3~\a\e\[00;32m%}%*%{\e[00;30m%}!%! %{\e[00;34m%}%2~ %# %{\e[0m%}'
-     ;;
-esac
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-function preexec() {
-  local a=${${1## *}[(w)1]}  # get the command
-  local b=${a##*\/}   # get the command basename
-  a="${b}${1#$a}"     # add back the parameters
-  a=${a//\%/\%\%}     # escape print specials
-  a=$(print -Pn "$a" | tr -d "\t\n\v\f\r")  # remove fancy whitespace
-  a=${(V)a//\%/\%\%}  # escape non-visibles and print specials
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
 
-  case "$TERM" in
-    screen|screen.*)
-      # See screen(1) "TITLES (naming windows)".
-      # "\ek" and "\e\" are the delimiters for screen(1) window titles
-      print -Pn "\ek%-3~ $a\e\\" # set screen title.  Fix vim: ".
-      print -Pn "\e]2;%-3~ $a\a" # set xterm title, via screen "Operating System Command"
-      ;;
-    rxvt|rxvt-unicode|xterm|xterm-color|xterm-256color)
-      print -Pn "\e]2;%m:%-3~ $a\a"
-      ;;
-  esac
-}
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-function precmd() {
-  case "$TERM" in
-    screen|screen.rxvt)
-      print -Pn "\ek%-3~\e\\" # set screen title
-      print -Pn "\e]2;%-3~\a" # must (re)set xterm title
-      ;;
-  esac
-  echo -ne '\a'		# audible on finished command
-}
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=( \
+	colorize \
+	docker \
+	dnf \
+	git \
+	gitignore \
+	svn \
+	systemd \
+	vagrant \
+	z \
+	)
 
-if [ $USER = halis ]; then
-	eval `keychain --confirm --quiet --agents gpg --eval`
-fi
+source $ZSH/oh-my-zsh.sh
 
-# powerline
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+# User configuration
 
-if [[ -r ~/.local/lib64/python3.2/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib64/python3.2/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"

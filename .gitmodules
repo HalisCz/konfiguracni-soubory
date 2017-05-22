@@ -1,36 +1,3 @@
-[submodule ".config/awesome"]
-	path = .config/awesome
-	url = git@github.com:HalisCz/awesome-conf.git
-[submodule ".vim/bundle/powerline"]
-	path = .vim/bundle/powerline
-	url = https://github.com/Lokaltog/powerline.git
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule ".vim/bundle/python-mode"]
-	path = .vim/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
-[submodule ".vim/bundle/skeletons.vim"]
-	path = .vim/bundle/skeletons.vim
-	url = https://github.com/tobyS/skeletons.vim.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-snippets"]
-	path = .vim/bundle/vim-snippets
-	url = git://github.com/honza/vim-snippets.git
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/qmarik/Vundle.vim.git
-[submodule ".urxvt/ext"]
-	path = .urxvt/ext
-	url = https://github.com/majutsushi/urxvt-font-size.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "/home/halis/.vim/bundle/Vundle.vim"]
+	path = /home/halis/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git

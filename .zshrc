@@ -55,17 +55,21 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( \
 	colorize \
+	common-aliases \
 	docker \
 	dnf \
 	git \
 	gitignore \
+	jsontools \
 	svn \
 	systemd \
 	vagrant \
 	z \
+	zsh-completions \
 	)
 
 source $ZSH/oh-my-zsh.sh
+compinit
 
 # User configuration
 

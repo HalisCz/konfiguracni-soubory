@@ -53,5 +53,5 @@ un() {
 alias pingg="ping -c 3 www.google.com"
 alias wget="wget -c"           # wget navazuje prerusene stahovani
 
-
-
+# vim
+alias vim="vimx" # vim na fedoře není kompilovaný s podporou clipboardu

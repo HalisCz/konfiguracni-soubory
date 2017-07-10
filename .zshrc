@@ -63,7 +63,10 @@ plugins=( \
 	jsontools \
 	svn \
 	systemd \
+	tig \
 	vagrant \
+	virtualenv \
+	virtualenvwrapper \
 	z \
 	zsh-completions \
 	)

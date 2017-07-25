@@ -67,6 +67,7 @@ plugins=( \
 	vagrant \
 	virtualenv \
 	virtualenvwrapper \
+	you-should-use \
 	z \
 	zsh-completions \
 	)

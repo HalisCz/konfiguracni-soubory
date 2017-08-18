@@ -61,8 +61,10 @@ plugins=( \
 	git \
 	gitignore \
 	jsontools \
+	scw \
 	svn \
 	systemd \
+	terraform \
 	tig \
 	vagrant \
 	virtualenv \

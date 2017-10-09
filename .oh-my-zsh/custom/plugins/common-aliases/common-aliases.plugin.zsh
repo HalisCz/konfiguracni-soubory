@@ -1,3 +1,9 @@
+# Halis modifikace:
+#  Odstraňit aliasy:
+#   alias rm='rm -i'
+#   alias cp='cp -i'
+#   alias mv='mv -i'
+#
 # Advanced Aliases.
 # Use with caution
 #

@@ -8,7 +8,7 @@
 			Plugin 'gmarik/Vundle.vim'
 			Plugin 'godlygeek/tabular'
 			Plugin 'honza/vim-snippets'
-			Plugin 'klen/python-mode'
+			Plugin 'python-mode/python-mode'
 			Plugin 'vim-airline/vim-airline'
 			Plugin 'vim-airline/vim-airline-themes'
 			Plugin 'scrooloose/nerdcommenter'

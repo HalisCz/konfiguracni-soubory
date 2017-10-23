@@ -14,12 +14,12 @@
 			Plugin 'scrooloose/nerdcommenter'
 			Plugin 'tobyS/skeletons.vim'
 			Plugin 'tpope/vim-fugitive'
-			Plugin 'pearofducks/ansible-vim'
 			Plugin 'nathanaelkane/vim-indent-guides'
 			Plugin 'fmoralesc/vim-pinpoint'
 			Plugin 'scrooloose/syntastic'
 			Plugin 'scrooloose/nerdtree'
 			Plugin 'ctrlpvim/ctrlp.vim'
+			Plugin 'sheerun/vim-polyglot'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode

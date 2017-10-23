@@ -65,6 +65,8 @@
 		let g:airline_symbols.linenr = ''
 	" UltiSnips
 		" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+		"vim-indent-guides
+			let g:indent_guides_enable_on_vim_startup = 1
 			let g:UltiSnipsExpandTrigger="<tab>"
 			let g:UltiSnipsJumpForwardTrigger="<c-b>"
 			let g:UltiSnipsJumpBackwardTrigger="<c-z>"

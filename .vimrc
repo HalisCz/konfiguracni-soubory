@@ -19,6 +19,7 @@
 			Plugin 'scrooloose/syntastic'
 			Plugin 'scrooloose/nerdtree'
 			Plugin 'ctrlpvim/ctrlp.vim'
+			Plugin 'airblade/vim-gitgutter'
 			Plugin 'sheerun/vim-polyglot'
 		call vundle#end()
 		filetype plugin indent on
@@ -147,7 +148,6 @@
 	set backupdir=~/.vim/backup
 
 "folding
-	set foldcolumn=4
 	set foldmethod=indent
 	set foldmarker=##,::
 

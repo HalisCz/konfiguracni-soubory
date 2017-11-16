@@ -60,12 +60,16 @@ plugins=( \
 	dnf \
 	git \
 	gitignore \
+	gpg-agent \
 	jsontools \
+	mosh \
 	scw \
 	svn \
 	systemd \
 	terraform \
 	tig \
+	tmux \
+	tmux-cssh \
 	vagrant \
 	virtualenv \
 	virtualenvwrapper \

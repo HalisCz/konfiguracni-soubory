@@ -57,6 +57,7 @@ plugins=( \
 	colorize \
 	common-aliases \
 	docker \
+	doctl \
 	dnf \
 	git \
 	gitignore \

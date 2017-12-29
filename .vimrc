@@ -191,13 +191,3 @@
 	map <Leader>g<Return> gogqG
 
 set ww=b,s,<,>,[,],~ ",h,l "chování na přechodu dvou řádků
-
-"""""""""""""""""""""" Enhanced commentify plugin
-" let g:EnhCommentifyTraditionalMode = 'no'
-" let g:EnhCommentifyUserMode = 'yes'
-" let g:EnhCommentifyAlignRight = 'yes'
-" let g:EnhCommentifyMultiPartBlocks = 'yes'
-" let g:EnhCommentifyUseSyntax = 'yes'
-
-""""""""""""""""""""""""""""""""
-"vim:nospell:

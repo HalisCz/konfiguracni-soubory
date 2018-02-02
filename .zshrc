@@ -62,6 +62,7 @@ plugins=( \
 	git \
 	gitignore \
 	gpg-agent \
+	httpie \
 	jsontools \
 	mosh \
 	scw \

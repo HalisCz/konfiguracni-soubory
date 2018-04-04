@@ -111,3 +111,10 @@ compinit
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Fortune
+if [ -t 0 ]; then # pokud je shell interaktivni
+	echo -e "\e[33m"
+	/usr/bin/fortune -a
+	echo -e "\e[39m"
+fi

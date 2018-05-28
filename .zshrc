@@ -72,6 +72,7 @@ plugins=( \
 	tig \
 	tmux \
 	tmux-cssh \
+	transfer \
 	vagrant \
 	virtualenv \
 	virtualenvwrapper \

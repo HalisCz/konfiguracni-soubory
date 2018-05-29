@@ -81,6 +81,9 @@ plugins=( \
 	zsh-completions \
 	)
 
+# Virtualenvwrapper plugin
+export WORKON_HOME=$HOME/.virtualenvs
+
 source $ZSH/oh-my-zsh.sh
 compinit
 

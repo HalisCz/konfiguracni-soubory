@@ -76,6 +76,7 @@ plugins=( \
 	vagrant \
 	virtualenv \
 	virtualenvwrapper \
+	vundle \
 	you-should-use \
 	z \
 	zsh-completions \

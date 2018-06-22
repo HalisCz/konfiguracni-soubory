@@ -24,7 +24,6 @@
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode
-			let g:pymode_options = 0 "nehrabej mi do nastavení, ale aktivuj v nich tyto
 			let g:pymode_python = 'python3' "use python3 syntax check by default
 			setlocal commentstring=#%s
 			setlocal define=^\s*\\(def\\\\|class\\)

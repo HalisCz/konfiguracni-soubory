@@ -66,6 +66,7 @@ plugins=( \
 	gpg-agent \
 	httpie \
 	jsontools \
+	kubectl \
 	mosh \
 	scw \
 	svn \

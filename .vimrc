@@ -95,7 +95,7 @@
 	set scrolloff=3					"minimální počet viditelných řádků při rolování
 	set sidescroll=3				"totéž při posun za strany
 	set wrap								"zobrazuje řádky zalomeně
-	set linebreak						"zlom jen ve slově 
+	set linebreak						"zlom jen ve slově
 	set autoindent					"jen zachovává odsazení
 	set smartindent					"zachovává odsazení ale inteligentně ho umí zvětšit/zmenšit
 	filetype plugin indent on	"odsazovaní podle filetype
@@ -163,7 +163,7 @@
 "Vzhled
 	"colorscheme darkblue
 "	let g:solarized_termcolors=256
-	"set background=light
+	set background=light
 	colorscheme solarized
 
 "spustí shell z označeným příkazem

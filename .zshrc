@@ -68,6 +68,7 @@ plugins=( \
 	jsontools \
 	kubectl \
 	mosh \
+	rsync \
 	scw \
 	svn \
 	systemd \

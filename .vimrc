@@ -163,7 +163,7 @@
 "Vzhled
 	"colorscheme darkblue
 "	let g:solarized_termcolors=256
-	set background=light
+	"set background=light
 	colorscheme solarized
 
 "spustí shell z označeným příkazem

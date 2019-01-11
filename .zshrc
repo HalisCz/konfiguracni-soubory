@@ -61,6 +61,7 @@ plugins=( \
 	docker-machine \
 	doctl \
 	dnf \
+	fzf \
 	git \
 	gitignore \
 	gpg-agent \
@@ -126,3 +127,7 @@ if [ -t 0 ]; then # pokud je shell interaktivni
 	/usr/bin/fortune -a
 	echo -e "\e[39m"
 fi
+
+# FZF
+# ALT-C with tree preview
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"

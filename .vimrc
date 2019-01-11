@@ -21,6 +21,7 @@
 			Plugin 'ctrlpvim/ctrlp.vim'
 			Plugin 'airblade/vim-gitgutter'
 			Plugin 'sheerun/vim-polyglot'
+			Plugin 'junegunn/fzf'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode

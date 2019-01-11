@@ -55,6 +55,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( \
+	ansible \
+	aws \
 	colorize \
 	common-aliases \
 	docker \
@@ -67,11 +69,13 @@ plugins=( \
 	gpg-agent \
 	httpie \
 	jsontools \
+	kube-ps1 \
 	kubectl \
+	minikube \
 	mosh \
+	nmap \
 	rsync \
 	scw \
-	svn \
 	systemd \
 	terraform \
 	tig \
@@ -127,6 +131,12 @@ if [ -t 0 ]; then # pokud je shell interaktivni
 	/usr/bin/fortune -a
 	echo -e "\e[39m"
 fi
+
+# kube-ps1 prompt
+KUBE_PS1_PREFIX=""
+KUBE_PS1_SUFFIX=" "
+#PROMPT='$(kube_ps1)'$PROMPT
+#prompt_segment "kube_ps1"
 
 # FZF
 # ALT-C with tree preview

@@ -86,11 +86,13 @@ plugins=( \
 	minikube \
 	mosh \
 	nmap \
+	pip \
 	rsync \
-	scw \
+	sprunge \
 	systemd \
 	terraform \
 	tig \
+	timer \
 	tmux \
 	tmux-cssh \
 	vagrant \
@@ -143,10 +145,16 @@ fi
 
 # kube-ps1 prompt
 KUBE_PS1_PREFIX=""
-KUBE_PS1_SUFFIX=" "
-#PROMPT='$(kube_ps1)'$PROMPT
-#prompt_segment "kube_ps1"
+KUBE_PS1_SUFFIX=""
+KUBE_PS1_SYMBOL_ENABLE=false
 
 # FZF
 # ALT-C with tree preview
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
+# Timer plugin
+TIMER_FORMAT='[%d]'
+TIMER_PRECISION=2
+
+# GOPATH
+export GOPATH=/home/halis/go

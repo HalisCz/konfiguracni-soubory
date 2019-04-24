@@ -1,2 +1,2 @@
 # http://zsh.sourceforge.net/Guide/zshguide04.html
-WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
+WORDCHARS='*?_-.[]~=/|&;!#$%^(){}<>'

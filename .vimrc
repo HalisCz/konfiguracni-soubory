@@ -4,32 +4,33 @@
 		call vundle#begin()
 		filetype off
 		"managed plugins
-			Plugin 'altercation/vim-colors-solarized'
+			Plugin 'airblade/vim-gitgutter'
+			"Plugin 'altercation/vim-colors-solarized'
+			Plugin 'lifepillar/vim-solarized8'
+			Plugin 'ctrlpvim/ctrlp.vim'
+			Plugin 'fatih/vim-go'
+			Plugin 'fmoralesc/vim-pinpoint'
 			Plugin 'gmarik/Vundle.vim'
 			Plugin 'godlygeek/tabular'
 			Plugin 'honza/vim-snippets'
+			Plugin 'junegunn/fzf'
+			Plugin 'nathanaelkane/vim-indent-guides'
 			Plugin 'python-mode/python-mode'
-			Plugin 'vim-airline/vim-airline'
-			Plugin 'vim-airline/vim-airline-themes'
 			Plugin 'scrooloose/nerdcommenter'
-			Plugin 'w0rp/ale'
+			Plugin 'scrooloose/nerdtree'
+			Plugin 'sheerun/vim-polyglot'
 			Plugin 'tobyS/skeletons.vim'
 			Plugin 'tpope/vim-fugitive'
-			Plugin 'nathanaelkane/vim-indent-guides'
-			Plugin 'fmoralesc/vim-pinpoint'
-			Plugin 'scrooloose/nerdtree'
-			Plugin 'ctrlpvim/ctrlp.vim'
-			Plugin 'airblade/vim-gitgutter'
-			Plugin 'sheerun/vim-polyglot'
-			Plugin 'junegunn/fzf'
+			Plugin 'tpope/vim-surround'
+			Plugin 'vim-airline/vim-airline'
+			Plugin 'vim-airline/vim-airline-themes'
+			Plugin 'w0rp/ale'
 		call vundle#end()
 		filetype plugin indent on
 		"Python mode
 			let g:pymode_python = 'python3' "use python3 syntax check by default
 			setlocal commentstring=#%s
 			setlocal define=^\s*\\(def\\\\|class\\)
-		"vim-indent-guides
-			let g:indent_guides_enable_on_vim_startup = 1
 		" vim-airline setup
 			let g:airline_theme='solarized'
 			"let g:airline#extensions#tabline#enabled = 1 " show buffers line
@@ -58,6 +59,12 @@
 			let g:airline_symbols.branch = ''
 			let g:airline_symbols.readonly = ''
 			let g:airline_symbols.linenr = ''
+		" w0rp/ale
+			let g:ale_fixers = {
+			\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+			\	'terraform': ['terraform'],
+			\   'javascript': ['eslint'],
+			\}
 
 "generic
 	set nocompatible				"není to vi ale vim
@@ -83,6 +90,7 @@
 "formáty
 	set fileencodings=utf-8,iso8859-2,cp1250
 	set fileformats=unix,dos
+	set nrformats-=octal		"čísla začínající nulou neber jako osmičkovou soustavu
 
 "statusline
 	set showcmd							"ukazuje příkazy na posledním řádku
@@ -94,7 +102,7 @@
 
 "zobrazení
 	set scrolloff=3					"minimální počet viditelných řádků při rolování
-	set sidescroll=3				"totéž při posun za strany
+	set sidescrolloff=3				"totéž při posun za strany
 	set wrap								"zobrazuje řádky zalomeně
 	set linebreak						"zlom jen ve slově
 	set autoindent					"jen zachovává odsazení
@@ -160,12 +168,18 @@
 	"au BufRead *.PAS set ft=pascal
 	"au BufRead *.lpr set ft=pascal
 
-
 "Vzhled
-	"colorscheme darkblue
-"	let g:solarized_termcolors=256
-	"set background=light
-	colorscheme solarized
+	set background=dark
+	set termguicolors
+	colorscheme solarized8
+	let g:solarized_term_italics=1
+	"let g:solarized_termcolors=256
+	
+"vim-indent-guides
+	let g:indent_guides_enable_on_vim_startup = 1
+	let g:indent_guides_auto_colors = 0
+	highlight IndentGuidesOdd  ctermbg=black
+	highlight IndentGuidesEven ctermbg=darkgrey
 
 "spustí shell z označeným příkazem
 	"příkaz shell pod kurzorem

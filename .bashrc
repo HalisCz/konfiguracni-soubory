@@ -5,12 +5,12 @@ fi
 
 # git status
 case $TERM in
-    xterm*|rxvt*)
-        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-        ;;
-    *)
-        TITLEBAR=''
-        ;;
+	xterm*|rxvt*)
+		TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+		;;
+	*)
+		TITLEBAR=''
+		;;
 esac
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh

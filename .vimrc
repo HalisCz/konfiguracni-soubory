@@ -169,12 +169,15 @@
 	"au BufRead *.lpr set ft=pascal
 
 "Vzhled
+	if exists('+termguicolors')
+		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+		set termguicolors
+	endif
 	set background=dark
-	set termguicolors
 	colorscheme solarized8
 	let g:solarized_term_italics=1
-	"let g:solarized_termcolors=256
-	
+
 "vim-indent-guides
 	let g:indent_guides_enable_on_vim_startup = 1
 	let g:indent_guides_auto_colors = 0

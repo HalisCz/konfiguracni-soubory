@@ -8,7 +8,6 @@
 			"Plugin 'altercation/vim-colors-solarized'
 			Plugin 'lifepillar/vim-solarized8'
 			Plugin 'ctrlpvim/ctrlp.vim'
-			Plugin 'fatih/vim-go'
 			Plugin 'fmoralesc/vim-pinpoint'
 			Plugin 'gmarik/Vundle.vim'
 			Plugin 'godlygeek/tabular'

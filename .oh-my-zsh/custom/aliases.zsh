@@ -11,3 +11,6 @@ alias wget="wget -c"           # wget navazuje prerusene stahovani
 
 ## vim
 alias vim="vimx" # vim na fedoře není kompilovaný s podporou clipboardu
+
+## barvy
+alias ncdu="ncdu --color=dark"

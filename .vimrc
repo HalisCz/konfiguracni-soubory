@@ -33,6 +33,7 @@
 		" vim-airline setup
 			let g:airline_theme='solarized'
 			"let g:airline#extensions#tabline#enabled = 1 " show buffers line
+			let g:airline#extensions#ale#enabled = 1 " ale in airline
 			let g:airline_powerline_fonts = 1
 			if !exists('g:airline_symbols')
 				let g:airline_symbols = {}
@@ -106,7 +107,6 @@
 	set linebreak						"zlom jen ve slově
 	set autoindent					"jen zachovává odsazení
 	set smartindent					"zachovává odsazení ale inteligentně ho umí zvětšit/zmenšit
-	filetype plugin indent on	"odsazovaní podle filetype
 
 "vyhledávání
 	set wrapscan						"po dosažení konce souboru se hledá znovu od začátku
@@ -125,6 +125,7 @@
 	set wildmenu						"v :příkazovém řádku zobrazí menu pro výběr
 	set wildmode=list:longest,list:full	"chování TAB v~příkazovém řádku
 	set wildignore=*~,*.o,*.aux	"Ignoruje při doplňování tabulátorem
+	set omnifunc=syntaxcomplete#Complete
 
 "sudo trick
 	cmap w!! w !sudo tee > /dev/null %
@@ -145,27 +146,6 @@
 "folding
 	set foldmethod=indent
 	set foldmarker=##,::
-
-"filetype specific options
-	"source ~/.vim/skeletons.vim
-	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php source ~/.vim/html.vim
-	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php source ~/.vim/html.menu
-	"au BufNewFile *.php,*.html,*.xhtml 0r ~/.vim/sablony/xhtml.html
-	"autocmd BufRead,BufNewFile *.html,*.xhtml,*.php set filetype=xhtml
-	"au BufNewFile *.fold 0r ~/.vim/sablony/osnova.fold
-	"au BufNewFile *.fold set filetype=conf
-	"au BufNewFile *.tex 0r ~/.vim/sablony/latex.tex
-	"au BufRead,BufNewFile *.tex set filetype=tex
-	"au BufNewFile *.pl 0r ~/.vim/sablony/perl.pl
-	"au BufNewFile *.c 0r ~/.vim/sablony/program.c
-
-	"au BufNewFile,BufRead *.t2t set ft=txt2tags
-	"au BufNewFile *.t2t 0r ~/.vim/sablony/txt2tags.t2t
-	"au BufNewFile,BufRead *.asm set ft=asm8051
-	"au BufNewFile,BufRead *.inc set ft=asm8051
-
-	"au BufRead *.PAS set ft=pascal
-	"au BufRead *.lpr set ft=pascal
 
 "Vzhled
 	if exists('+termguicolors')
@@ -191,7 +171,7 @@
 	"celý řádek zadá jako příkaz shell
 		map <Leader>E ^v$h<Leader>e
 		imap <Leader>E <Esc><Leader>E
-"řetězec pod kurzorem vloží jak URL do prohlížeče
+	"řetězec pod kurzorem vloží jak URL do prohlížeče
 	map <Leader>w :!firefox <C-R><C-A> & <Return>
 
 "Formátování
@@ -201,3 +181,9 @@
 	map <Leader>g<Return> gogqG
 
 set ww=b,s,<,>,[,],~ ",h,l "chování na přechodu dvou řádků
+
+" diffing
+	" enable advanced diff https://vimways.org/2018/the-power-of-diff/
+	if has('nvim-0.3.2') || has("patch-8.1.0360")
+		set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+	endif

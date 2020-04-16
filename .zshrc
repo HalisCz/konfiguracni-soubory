@@ -81,15 +81,16 @@ plugins=( \
 	docker-machine \
 	doctl \
 	dnf \
+	extract \
 	fzf \
 	git \
+	git-extras \
 	gitignore \
 	gpg-agent \
 	httpie \
 	jsontools \
-	kube-ps1 \
-	kubectl \
-	minikube \
+	# kubectl \
+	# minikube \
 	mosh \
 	nmap \
 	pip \
